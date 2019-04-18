@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
 import News from './Components/News';
+import Formnews from './Components/Formnews';
 
 
 class App extends Component {
@@ -19,8 +20,11 @@ class App extends Component {
 
   }
   // Creamos una funcion para consultar la api
-  checkNews =()=>{
-    let url = 'https://newsapi.org/v2/top-headlines?country=co&category=general&apiKey=27c0e34cbbb3476a8b67c4cb2e666a37';
+  checkNews = (category = 'general') =>{
+
+    console.log(category);
+    let url = `https://newsapi.org/v2/top-headlines?country=co&category=${category}&apiKey=27c0e34cbbb3476a8b67c4cb2e666a37`;
+    console.log(url);
     
     //console.log(url)
 
@@ -35,7 +39,7 @@ class App extends Component {
     .then(newsResponse =>{
       
       //esta respuesta(en arreglos) se debe llevar al state
-      console.log(newsResponse.articles);
+      //console.log(newsResponse.articles);
       // mandamos las respuesta de noticias por medio de this.setState()
       this.setState({
         newsResponse: newsResponse.articles
@@ -52,6 +56,9 @@ class App extends Component {
           title="Noticias"
         />
         <div className="container white contenedor-noticias">
+        <Formnews 
+          checkNews = {this.checkNews}
+        />
         <News 
           news ={this.state.newsResponse}
         />

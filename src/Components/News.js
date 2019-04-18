@@ -6,7 +6,7 @@ class News extends Component{
     render(){
         return(
             <div className="row">
-            
+
                 {this.props.news.map(allnews =>(
                     //con map hacemos el recorido de las noticias y los pasamos al componente Onenews
                     <Onenews
