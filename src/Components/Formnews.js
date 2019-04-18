@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 
 class Formnews extends Component{
     constructor(props){
@@ -53,4 +55,7 @@ class Formnews extends Component{
     };
 }
 
+Formnews.propTypes={
+    checkNews: PropTypes.func.isRequired
+}
 export default Formnews;

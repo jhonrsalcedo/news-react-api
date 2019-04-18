@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 //statelees react component
@@ -12,4 +13,7 @@ const Header =(props) =>{
     );
 };
 
+Header.propTypes = {
+    title: PropTypes.string.isRequired
+}
 export default Header;

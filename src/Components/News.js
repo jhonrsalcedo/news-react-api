@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Onenews from './Onenews';
+import PropTypes from 'prop-types';
 
 //componente de noticias
 class News extends Component{
@@ -19,5 +20,7 @@ class News extends Component{
         );
     };
 }
-
+News.propTypes = {
+    news: PropTypes.array.isRequired
+}
 export default News;

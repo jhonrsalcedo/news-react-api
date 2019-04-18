@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 //componente que solo mostrara una noticia
@@ -30,5 +31,14 @@ const {urlToImage, url, title, description, source} = props.allnews;
         </div>
     )
 }
-
+//utilizamos un shapes se recomienda por que el objeto es muy extenso
+Onenews.propTypes ={
+    allnews: PropTypes.shape({
+        urlToImage: PropTypes.string,
+        url: PropTypes.string,
+        title: PropTypes.string,
+        description: PropTypes.string,
+        source: PropTypes.object
+    })
+}
 export default Onenews;
