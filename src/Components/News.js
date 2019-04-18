@@ -10,7 +10,7 @@ class News extends Component{
                 {this.props.news.map(allnews =>(
                     //con map hacemos el recorido de las noticias y los pasamos al componente Onenews
                     <Onenews
-                    //debemos identificar un key y para esto utilizaremos la url que seria unica en cada registro
+                    //debemos identificar un key y para esto utilizaremos la url que seria unica en cada noticias
                         key={allnews.url}
                         allnews={allnews}
                     />
