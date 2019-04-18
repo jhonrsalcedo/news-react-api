@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+//statelees react component
 const Header =(props) =>{
     return(
         <nav>

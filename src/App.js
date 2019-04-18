@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
+import News from './Components/News';
 
 
 class App extends Component {
@@ -46,10 +47,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="contenedor-app">
         <Header
           title="Noticias"
         />
+        <div className="container white contenedor-noticias">
+        <News 
+          news ={this.state.newsResponse}
+        />
+        </div>
       </div>
     );
   }
