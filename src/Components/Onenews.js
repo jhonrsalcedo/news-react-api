@@ -7,16 +7,23 @@ const Onenews = (props) =>{
 //utilizaremos el destructuring para obtener solo las img title descrip url para cada uno de las noticias
 const {urlToImage, url, title, description, source} = props.allnews;
 
+//en caso de que la noticia no tenga imagen realizamos una condicion
+                const image = (urlToImage)
+                ? // si existe imagen haga:
+                <div className="card-image">
+                    <img src={urlToImage} alt={title}/>
+                    <span className="card-title">{source.name}</span>
+                </div>
+                //si no muestre cadena vacia
+                :'';
+
 //comprobamos que se esta pasando la info
 //console.log(title)
     return(
         
         <div className="col s12 m6 l4">
             <div className="card">
-                <div className="card-image">
-                    <img src={urlToImage} alt={title}/>
-                    <span className="card-title">{source.name}</span>
-                </div>
+                {image}
                 <div className="card-content">
                     <h3>{title}</h3>
                     <p>{description}</p>
